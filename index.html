@@ -6,14 +6,24 @@
     <link rel="stylesheet" href="src/styles.css" />
     <title>QY-Ai-Poems-Generator</title>
   </head>
-  <body>
+  <body class="container">
     <h1>Ai Poems Generator</h1>
     <main>
       <form>
-        <input type="text" placeholder="Enter Poem topic" autofocus required />
-        <input type="submit" />
+        <input
+          type="text"
+          placeholder="Enter Poem topic"
+          autofocus
+          required
+          class="instructions"
+        />
+        <input type="submit" class="submit-button" />
       </form>
-      <p>Roses are red...</p>
+      <div class="poem">
+        Roses are red
+        <br />
+        Violets are blue
+      </div>
     </main>
     <footer>
       This Ai project was coded by
