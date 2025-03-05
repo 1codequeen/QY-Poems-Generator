@@ -1,11 +1,28 @@
-function generatePoem(event) {
-  event.preventDefault();
+function displayPoems(response) {
+  console.log("poem generated");
   new Typewriter("#Poems", {
-    strings: ["Roses are red...", "Violets are blue..."],
+    strings: response.data.answer,
     autoStart: true,
     delay: 75,
     cursor: "",
   });
+}
+
+function generatePoem(event) {
+  event.preventDefault();
+
+  let InstructionsOutput = document.querySelector("#user-instructions");
+  let apiKey = "9435699d6f2a3f2cd6b3e67t0o99669e";
+  let prompt = `Generate a poem about ${InstructionsOutput.value}`;
+  let context =
+    "You are an ai poem generator that writes short poems about different types of emotions your mission is to write maximum of four lined poems that talk about each emotion";
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apikey}`;
+
+  console.log("generating Poem");
+  console.log(`Prompt:${prompt}`);
+  console.log(`Context:${context}`);
+
+  axios.get(apiUrl).then(displayPoems);
 }
 
 let poemFormElement = document.querySelector("#poem-generator");
