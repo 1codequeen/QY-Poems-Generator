@@ -11,18 +11,22 @@
   <body class="container">
     <h1>Ai Emotions Poem Generator</h1>
     <main>
-      <form id="poem-generator">
-        <input
-          type="text"
-          placeholder="Enter Poem topic..."
-          autofocus
-          required
-          class="instructions"
-          id="user-instructions"
-        />
-        <input type="submit" class="submit-button" />
-      </form>
-      <div class="poem" id="Poems"></div>
+      <div id="form-container">
+        <form id="poem-generator">
+          <input
+            type="text"
+            placeholder="Enter Poem topic..."
+            autofocus
+            required
+            class="instructions"
+            id="user-instructions"
+          />
+
+          <input type="submit" class="submit-button" />
+        </form>
+        <div class="hint">i.e happiness, sadness or anxiety</div>
+      </div>
+      <div class="poem hidden" id="Poem"></div>
     </main>
     <footer>
       This Ai project was coded by
