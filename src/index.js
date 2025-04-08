@@ -1,6 +1,6 @@
 function displayPoems(response) {
   console.log("poem generated");
-  new Typewriter("#Poems", {
+  new Typewriter("#Poem", {
     strings: response.data.answer,
     autoStart: true,
     delay: 75,
@@ -22,9 +22,9 @@ function generatePoem(event) {
   console.log(`Prompt:${prompt}`);
   console.log(`Context:${context}`);
 
-  let poemElement = document.querySelector("#poem");
+  let poemElement = document.querySelector("#Poem");
   poemElement.classList.remove("hidden");
-  poemElement.innerHTML = `<div class="generating">⏳ Generating a French poem about ${instructionsInput.value}</div>`;
+  poemElement.innerHTML = `<div class="generating">⏳ Generating a poem about ${instructionsOutput.value}</div>`;
 
   axios.get(apiUrl).then(displayPoems);
 }
